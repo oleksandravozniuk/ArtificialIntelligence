@@ -4,3 +4,9 @@ C:\Users\Oleksandra\Desktop\AI1\AI1\AI1\bin\Debug\AI1.exe
 C:\Users\Oleksandra\Desktop\AI1\AI1\AI1\bin\Debug\AI1.pdb
 C:\Users\Oleksandra\Desktop\AI1\AI1\AI1\obj\Debug\AI1.exe
 C:\Users\Oleksandra\Desktop\AI1\AI1\AI1\obj\Debug\AI1.pdb
+C:\Users\Oleksandra\Desktop\AI\AI1\AI1\bin\Debug\AI1.exe.config
+C:\Users\Oleksandra\Desktop\AI\AI1\AI1\bin\Debug\AI1.exe
+C:\Users\Oleksandra\Desktop\AI\AI1\AI1\bin\Debug\AI1.pdb
+C:\Users\Oleksandra\Desktop\AI\AI1\AI1\obj\Debug\AI1.csprojAssemblyReference.cache
+C:\Users\Oleksandra\Desktop\AI\AI1\AI1\obj\Debug\AI1.exe
+C:\Users\Oleksandra\Desktop\AI\AI1\AI1\obj\Debug\AI1.pdb

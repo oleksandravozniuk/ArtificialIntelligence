@@ -10,7 +10,7 @@ namespace AI1
     public class DFS
     {
 
-        private Stack<Node> path = new Stack<Node>();
+        private List<Node> path = new List<Node>();
 
         public List<Node> visited = new List<Node>();
 
@@ -25,6 +25,8 @@ namespace AI1
         public void Search(Node root)
         {
             visited.Add(root);
+
+            root.MakeChildren();
            
             foreach (var node in root._children)
             { 
@@ -33,7 +35,7 @@ namespace AI1
                     
                     if (PathHasNode(node) == false)
                     {
-                        path.Push(root);
+                        path.Add(root);
                         Search(node);
                     }
                 }

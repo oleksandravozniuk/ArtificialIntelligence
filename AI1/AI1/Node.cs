@@ -24,10 +24,10 @@ namespace AI1
             Jar1 = jar1;
             Jar2 = jar2;
             ParentNode = parent;
-            MakeChildren();
+            //MakeChildren();
         }
 
-        private void MakeChildren()
+        public void MakeChildren()
         {
             if (Level <= 20)
             { 
