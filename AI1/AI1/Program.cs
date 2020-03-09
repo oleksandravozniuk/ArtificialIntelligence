@@ -22,10 +22,12 @@ namespace AI1
             Console.WriteLine();
 
             foreach (var n in dfs.visited)
-                Console.WriteLine(n); 
-            
-            
-            
+                Console.WriteLine(n);
+
+
+            Console.WriteLine();
+
+            //dfs.printTree(root);
             
             
             Console.ReadLine();

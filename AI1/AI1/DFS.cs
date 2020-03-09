@@ -16,6 +16,8 @@ namespace AI1
 
         public static int result = 3;
 
+        public static int depthLimit = 30;
+
         public DFS()
         {
 
@@ -33,7 +35,7 @@ namespace AI1
                 if (!IsResult())
                 {
                     
-                    if (PathHasNode(node) == false)
+                    if (!PathHasNode(node)  && visited.Count<=depthLimit)
                     {
                         path.Add(root);
                         Search(node);
@@ -75,6 +77,20 @@ namespace AI1
             }
 
             return false;
+        }
+
+        public void printTree(Node root)
+        {
+            
+            
+            foreach(var node in root._children)
+            {
+                Console.WriteLine(node);
+                Console.WriteLine();
+
+               
+                    printTree(node);
+            }
         }
 
 

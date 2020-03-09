@@ -12,6 +12,9 @@ namespace AI1
         public static int limitFirstJar = 9;
 
         public static int limitSecondJar = 5;
+        //----------------------------------------------------
+        public static int levelLimit = 20;
+
 
 
         public Node ParentNode { get; set; }
@@ -29,21 +32,18 @@ namespace AI1
 
         public void MakeChildren()
         {
-            if (Level <= 20)
+            if (Level <= levelLimit)
             { 
-                
-                    if (Jar2 == 0 && Jar1!=limitFirstJar)
+
+                    if (Jar2 == 0 && Jar1 != limitFirstJar)
                     {
-                        _children.Add(new Node(this.Level + 1, Jar1, limitSecondJar, this));
+                    _children.Add(new Node(this.Level + 1, Jar1, limitSecondJar, this));
                     }
 
-
-                    if (Jar1 == 0 && Jar2!=limitSecondJar)
+                    if (Jar1 == 0 && Jar2 != limitSecondJar)
                     {
-                        _children.Add(new Node(this.Level + 1, limitFirstJar, Jar2, this));
+                    _children.Add(new Node(this.Level + 1, limitFirstJar, Jar2, this));
                     }
-
-                   
 
                     if (Jar1 != limitFirstJar && Jar2 != 0)
                     {
@@ -78,7 +78,6 @@ namespace AI1
                     {
                         _children.Add(new Node(this.Level + 1, Jar1, 0, this));
                     }
-
 
             }
 
