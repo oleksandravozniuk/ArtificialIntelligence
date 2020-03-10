@@ -17,9 +17,17 @@ namespace AI1
 
             dfs.Search(root);
 
+            Console.WriteLine("Depth Search with limit");
+
+            Console.WriteLine("Jar1 = 9   Jar2=5   Limit=20");
+
+            Console.WriteLine("Path:");
+
             dfs.GetPath();
 
             Console.WriteLine();
+
+            Console.WriteLine("All visited vertexes:");
 
             foreach (var n in dfs.visited)
                 Console.WriteLine(n);

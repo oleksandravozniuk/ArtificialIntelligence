@@ -26,26 +26,25 @@ namespace AI1
 
         public void Search(Node root)
         {
-            visited.Add(root);
-
-            root.MakeChildren();
+            root.MakeChildren();//generate possible states
            
-            foreach (var node in root._children)
+            foreach (var node in root._children)//for each state
             { 
-                if (!IsResult())
+                if (!IsResult())//if result is not found
                 {
-                    
-                    if (!PathHasNode(node)  && visited.Count<=depthLimit)
+                    visited.Add(root);//add to visited nodes
+
+                    if (!PathHasNode(node)  && visited.Count<=depthLimit)//if path don't have this node
                     {
-                        path.Add(root);
-                        Search(node);
+                        path.Add(root);//add to path
+                        Search(node);//continue recursion with children node
                     }
                 }
 
             }
         }
 
-        public bool IsResult()
+        public bool IsResult()//check whether result is in the path or no
         {
             foreach(var node in path)
             {
@@ -58,7 +57,7 @@ namespace AI1
             return false;
         }
 
-        public void GetPath()
+        public void GetPath()//print path
         {
             foreach(var node in path)
             {
@@ -66,7 +65,7 @@ namespace AI1
             }
         }
 
-        public bool PathHasNode(Node n)
+        public bool PathHasNode(Node n)//check if a concrete node is present in the path
         {
             foreach (var node in path)
             {
