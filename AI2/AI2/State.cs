@@ -31,8 +31,6 @@ namespace AI2
         {
             var emptyCell = (x: SearchForEmptyCell().Item1, y: SearchForEmptyCell().Item2);
 
-            Console.WriteLine("x: " + emptyCell.x + " y: " + emptyCell.y);
-
             for(var i=0;i<3;i++)
             {
                 for(var j=0;j<3;j++)
@@ -41,7 +39,7 @@ namespace AI2
                     {
                         if(i-1>=0)//move an empty cell up
                         {
-                        Console.WriteLine("Up");
+
                         ChangeCells((i - 1, j), emptyCell);
                         
                         }
@@ -49,19 +47,19 @@ namespace AI2
                         if(j+1 <=2)//move an empty cell right
                         {
                             ChangeCells((i, j + 1), emptyCell);
-                            Console.WriteLine("Right");
+
                         }
                         
                         if(i+1<=2)//move an empty cell down
                         {
                             ChangeCells((i + 1, j), emptyCell);
-                            Console.WriteLine("Down");
+
                         }
 
                         if(j-1>=0)//move an empty cell left
                         {
                             ChangeCells((i, j - 1), emptyCell);
-                            Console.WriteLine("Left");
+
                         }
                     }
                     
