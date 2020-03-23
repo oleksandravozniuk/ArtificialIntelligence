@@ -15,29 +15,25 @@ namespace AI1
 
             DFS dfs = new DFS();
 
-            dfs.Search(root);
-
+            List<Node> path = new List<Node>(); 
+            
+            
             Console.WriteLine("Depth Search with limit");
 
-            Console.WriteLine("Jar1 = 9   Jar2=5   Limit=20");
+            Console.WriteLine("Jar1 = 9   Jar2 = 5   Limit= 20");
 
-            Console.WriteLine("Path:");
+            try
+            {
+               path = dfs.Search(root, new List<Node>());
+               Console.WriteLine("Path:");
+               dfs.GetPath(path);   
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
 
-            dfs.GetPath();
 
-            Console.WriteLine();
-
-            Console.WriteLine("All visited vertexes:");
-
-            foreach (var n in dfs.visited)
-                Console.WriteLine(n);
-
-
-            Console.WriteLine();
-
-            //dfs.printTree(root);
-            
-            
             Console.ReadLine();
         }
 

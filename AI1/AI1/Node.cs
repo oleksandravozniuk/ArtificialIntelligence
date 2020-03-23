@@ -13,7 +13,7 @@ namespace AI1
 
         public static int limitSecondJar = 5;
         //----------------------------------------------------
-        public static int levelLimit = 20;
+        public static int levelLimit = 21;
 
 
 

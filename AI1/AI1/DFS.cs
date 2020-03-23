@@ -10,62 +10,54 @@ namespace AI1
     public class DFS
     {
 
-        private List<Node> path = new List<Node>();
+        //private List<Node> path = new List<Node>();
 
         public List<Node> visited = new List<Node>();
 
         public static int result = 3;
 
-        public static int depthLimit = 30;
+        public static int depthLimit = 21;
 
         public DFS()
-        {
+        { }
 
 
-        }
-
-        public void Search(Node root)
+        public List<Node> Search(Node root, List<Node> path)
         {
             root.MakeChildren();//generate possible states
-           
+
+            if (IsResult(root)) return path;
+
+            visited.Add(root);//add to visited nodes
+
             foreach (var node in root._children)//for each state
-            { 
-                if (!IsResult())//if result is not found
-                {
-                    visited.Add(root);//add to visited nodes
-
-                    if (!PathHasNode(node)  && visited.Count<=depthLimit)//if path don't have this node
-                    {
-                        path.Add(root);//add to path
-                        Search(node);//continue recursion with children node
-                    }
-                }
-
-            }
-        }
-
-        public bool IsResult()//check whether result is in the path or no
-        {
-            foreach(var node in path)
             {
-                if (node.Jar1 == result || node.Jar2 == result)
+                if (!PathHasNode(node, path) && visited.Count <= depthLimit)//if path don't have this node
                 {
-                    return true;
+                    path.Add(node);//add to path
+                    return Search(node, path);//continue recursion with children node
                 }
             }
+            throw new Exception("Solution cannot be found because the limit is too small");
 
-            return false;
         }
 
-        public void GetPath()//print path
+        public bool IsResult(Node node)//check whether result is in the path or no
         {
-            foreach(var node in path)
-            {
-               Console.WriteLine(node);
-            }
+            return node.Jar1 == result || node.Jar2 == result;
         }
 
-        public bool PathHasNode(Node n)//check if a concrete node is present in the path
+        public void GetPath(List<Node> path)//print path
+        {
+
+            foreach (var node in path)
+            {
+                Console.WriteLine(node);
+            }
+
+        }
+
+        public bool PathHasNode(Node n, List<Node> path)//check if a concrete node is present in the path
         {
             foreach (var node in path)
             {
