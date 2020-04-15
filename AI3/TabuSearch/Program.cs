@@ -18,7 +18,9 @@ namespace TabuSearch
 
             var tabu = new Tabu();
 
+       
             tabu.Search(startState);
+           
 
             Console.ReadKey();
         }
