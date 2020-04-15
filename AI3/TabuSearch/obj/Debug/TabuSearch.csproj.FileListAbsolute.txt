@@ -1,0 +1,6 @@
+C:\Users\Oleksandra\Desktop\AI\AI3\TabuSearch\bin\Debug\TabuSearch.exe.config
+C:\Users\Oleksandra\Desktop\AI\AI3\TabuSearch\bin\Debug\TabuSearch.exe
+C:\Users\Oleksandra\Desktop\AI\AI3\TabuSearch\bin\Debug\TabuSearch.pdb
+C:\Users\Oleksandra\Desktop\AI\AI3\TabuSearch\obj\Debug\TabuSearch.csprojAssemblyReference.cache
+C:\Users\Oleksandra\Desktop\AI\AI3\TabuSearch\obj\Debug\TabuSearch.exe
+C:\Users\Oleksandra\Desktop\AI\AI3\TabuSearch\obj\Debug\TabuSearch.pdb
