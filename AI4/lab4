@@ -1,0 +1,41 @@
+
+
+%%0 cell is on position x1y1
+move([0,Z1,Z2,Z3,Z4,Z5],[Z3,Z1,Z2,0,Z4,Z5]).
+move([0,Z1,Z2,Z3,Z4,Z5],[Z1,0,Z2,Z3,Z4,Z5]).
+
+%%0 cell is on position x1y2
+
+move([Z1,0,Z2,Z3,Z4,Z5],[0,Z1,Z2,Z3,Z4,Z5]).
+move([Z1,0,Z2,Z3,Z4,Z5],[Z1,Z2,0,Z3,Z4,Z5]).
+move([Z1,0,Z2,Z3,Z4,Z5],[Z1,Z4,Z2,Z3,0,Z5]).
+
+%0 cell is on position x1y3
+move([Z1,Z2,0,Z3,Z4,Z5],[Z1,0,Z2,Z3,Z4,Z5]).
+move([Z1,Z2,0,Z3,Z4,Z5],[Z1,Z2,Z5,Z3,Z4,0]).
+
+%0 cell is on position x2y1
+
+move([Z1,Z2,Z3,0,Z4,Z5],[Z1,Z2,Z3,Z4,0,Z5]).
+move([Z1,Z2,Z3,0,Z4,Z5],[0,Z2,Z3,Z1,Z4,Z5]).
+
+%0 cell is on position x2y2
+move([Z1,Z2,Z3,Z4,0,Z5],[Z1,Z2,Z3,0,Z4,Z5]).
+move([Z1,Z2,Z3,Z4,0,Z5],[Z1,Z2,Z3,Z4,Z5,0]).
+move([Z1,Z2,Z3,Z4,0,Z5],[Z1,0,Z3,Z4,Z2,Z5]).
+
+%0 cell is on position x2y3
+
+move([Z1,Z2,Z3,Z4,Z5,0],[Z1,Z2,0,Z4,Z5,Z3]).
+move([Z1,Z2,Z3,Z4,Z5,0],[Z1,Z2,Z3,Z4,0,Z5]).
+
+goal([_,_,5,_,_,3]).
+
+dfs(S, Path, Path,_) :- goal(S).
+
+dfs(S, Checked, Path,Depth) :-
+    Depth>0,
+    move(S, S2),
+    \+member(S2, Checked),
+    New_depth is Depth-1,
+    dfs(S2, [S2|Checked], Path,New_depth).
